@@ -3,9 +3,6 @@ import {render} from 'react-dom'
 import {Breadcrumb, Icon} from 'antd';
 
 // 面包屑
-// const Breadcrumb = React.createClass({
-// class Breadcrumb extends React.Component {
-
 export default class extends React.Component {
   render() {
     return <Breadcrumb>
@@ -23,4 +20,3 @@ export default class extends React.Component {
     </Breadcrumb>
   }
 }
-// export default Breadcrumb;
