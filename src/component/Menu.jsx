@@ -1,7 +1,9 @@
 import React from 'react';
-
+import {Link} from 'react-router';
 import {Menu, Icon, Switch} from 'antd';
 const SubMenu = Menu.SubMenu;
+
+const ACTIVE = {color: 'red'};
 
 export default React.createClass({
   getInitialState() {
@@ -31,10 +33,15 @@ export default React.createClass({
               selectedKeys={[this.state.current]}
               mode="inline">
           <SubMenu key="sub1" title={<span><Icon type="mail" /><span>导航一</span></span>}>
-            <Menu.Item key="1">选项1</Menu.Item>
-            <Menu.Item key="2">选项2</Menu.Item>
-            <Menu.Item key="3">选项3</Menu.Item>
-            <Menu.Item key="4">选项4</Menu.Item>
+            <Menu.Item key="12"><Link to="/grid" activeStyle={ACTIVE}>表格</Link></Menu.Item>
+            <Menu.Item key="22"><Link to="/about" activeStyle={ACTIVE}>关于</Link></Menu.Item>
+            <Menu.Item key="32"><Link to="/cascader" activeStyle={ACTIVE}>级联选择</Link></Menu.Item>
+            <Menu.Item key="42"><Link to="/users" activeStyle={ACTIVE}>users</Link></Menu.Item>
+            <Menu.Item key="52"><Link to="/users/123" activeStyle={ACTIVE}>users/123</Link></Menu.Item>
+
+            <Menu.Item key="6"><Link to="/users/ryan" activeStyle={ACTIVE}>/users/ryan</Link></Menu.Item>
+            <Menu.Item key="63"><Link to={{ pathname: '/users/ryan', query: { foo: 'bar' } }} activeStyle={ACTIVE}>/users/ryan?foo=bar</Link></Menu.Item>
+            <Menu.Item key="62">选项4</Menu.Item>
           </SubMenu>
           <SubMenu key="sub2" title={<span><Icon type="appstore" /><span>导航二</span></span>}>
             <Menu.Item key="5">选项5</Menu.Item>
